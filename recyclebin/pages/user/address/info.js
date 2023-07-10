@@ -9,7 +9,8 @@ Page({
     province:"",
     city:"",
     district:"",
-    customItem: ""
+    customItem: "",
+
   },
   onLoad: function (options) {
     var aid = options.aid;
@@ -40,6 +41,7 @@ Page({
       city:e.detail.value[1],
       district:e.detail.value[2],
     });
+    console.log("县区:",e.detail.value[2])
   },
   submit: function (t) {
     var a = this;
