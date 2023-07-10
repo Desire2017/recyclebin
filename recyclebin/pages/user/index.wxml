@@ -1,0 +1,113 @@
+<!--pages/user/index.wxml-->
+<!--pages/customer/index.wxml-->
+<view class="page">
+  <view class="page_top">
+    <view class="weui-cell weui-cell_access">
+      <view class="weui-cell__hd page_tx">
+        <image src="{{avatarUrl}}"></image>
+      </view>
+      <view class="weui-cell__bd">
+        <view class="mc">{{nickName}}</view>
+        <view class="tj">{{phone}}</view>
+      </view>
+      <block wx:if="{{!phone}}">
+        <view class="tixian">
+          <button size="mini" class="txan" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">点击登录 </button>
+        </view>
+      </block>
+    </view>
+  </view>
+  <!-- 全部订单 -->
+  <view class="myServer">
+    <view class="server order">
+      <view class="weui-cell weui-cell_access">
+        <view class="weui-cell__bd weui-cell_primary">
+          <view class="server_order">我的回收</view>
+        </view>
+      </view>
+    </view>
+    <view class="flex-nav">
+      <view class='flex_item'>
+        <view class='placeholder'>
+          <navigator url="/pages/user/order/orderList?state=0" hover-class="navigator-hover">
+            <image src="/images/icon_order4.png" class="logoimg" />待回收
+          </navigator>
+        </view>
+      </view>
+      <view class='flex_item'>
+        <view class='placeholder'>
+          <navigator url="/pages/user/order/orderList?state=1" hover-class="navigator-hover">
+            <image src="/images/icon_order2.png" class="logoimg" />服务中
+          </navigator>
+        </view>
+      </view>
+      <view class='flex_item'>
+        <view class='placeholder'>
+          <navigator url="/pages/user/order/orderList?state=2" hover-class="navigator-hover">
+            <image src="/images/icon_order3.png" class="logoimg" />待评价
+          </navigator>
+        </view>
+      </view>
+      <view class='flex_item'>
+        <view class='placeholder'>
+          <navigator url="/pages/user/order/orderList?state=99" hover-class="navigator-hover">
+            <image src="/images/icon_order0.png" class="logoimg" />全部订单
+          </navigator>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 我的服务 -->
+  <view class="myServer">
+    <view class="server">
+      <view class="weui-cell weui-cell_access">
+        <view class="weui-cell__bd weui-cell_primary">
+          <view class="server_order">我的服务</view>
+        </view>
+      </view>
+    </view>
+    <view class="flex-nav">
+      <view class='flex_item_server'>
+        <view class='placeholder'>
+          <navigator url="/pages/user/invite/index" hover-class="navigator-hover">
+            <image src="/images/icon_invite_c.png" class="logoimg" />分享朋友
+          </navigator>
+        </view>
+      </view>
+      <view class='flex_item_server'>
+        <view class='placeholder'>
+          <navigator url="/pages/user/info/index" hover-class="navigator-hover">
+            <image src="/images/icon_info_c.png" class="logoimg" />我的资料
+          </navigator>
+        </view>
+      </view>
+      <view class='flex_item_server'>
+        <view class='placeholder'>
+          <navigator url="/pages/user/address/index" hover-class="navigator-hover">
+            <image src="/images/icon_address_c.png" class="logoimg" />地址信息
+          </navigator>
+        </view>
+      </view>
+      <view class='flex_item_server'>
+        <view class='placeholder'>
+          <navigator url="/pages/user/feedback/index" hover-class="navigator-hover">
+            <image src="/images/icon_feedback_c.png" class="logoimg" />通知反馈
+          </navigator>
+        </view>
+      </view>
+      <view class='flex_item_server'>
+        <view class='placeholder'>
+          <view bindtap='contact'>
+            <image src="/images/icon_phone_c.png" class="logoimg" />联系售后
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="service">
+    <button size="mini" openType="contact">
+      <image src="{{service}}"></image>
+    </button>
+  </view>
+
+</view>

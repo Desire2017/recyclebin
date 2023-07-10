@@ -1,0 +1,81 @@
+/* pages/user/info/detail.wxss */
+@import "/style/weui.wxss";
+.l-info {
+  display: block;
+}
+.weui-cell__bd .avatar-wrapper{
+  margin: 0;
+  padding: 0;
+  width: 120rpx;
+}
+
+.weui-cell__bd image {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 5px;
+  display: block;
+}
+
+.l-img {
+  border-bottom: 1px solid #eee;
+  padding: 20rpx 25rpx;
+}
+
+.weui-cell__bd {
+  font-size: 32rpx;
+  color: #555;
+}
+
+.i-title {
+  display: block;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 30rpx;
+  color: #777;
+}
+
+.l-warp {
+  display: block;
+  background: #fff;
+  border-radius: 5rpx;
+  box-shadow: 3rpx 3rpx 3rpx 3rpx #eee;
+  width: 100%;
+  overflow: hidden;
+}
+
+.page {
+  display: block;
+}
+
+.weui-cells__title {
+  font-size: 32rpx;
+}
+
+.weui-label {
+  width: 160rpx;
+  font-size: 32rpx;
+}
+
+.weui-select {
+  font-size: 34rpx;
+  color: #f25a3b;
+}
+
+.weui-input {
+  height: 95rpx;
+  min-height: 95rpx;
+  line-height: 95rpx;
+  font-size: 32rpx;
+}
+
+.weui-agree__text {
+  font-size: 30rpx;
+}
+
+.weui-vcode-btn {
+  font-size: 32rpx;
+}
+
+.weui-btn {
+  font-size: 32rpx;
+}

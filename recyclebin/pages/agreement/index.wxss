@@ -1,0 +1,48 @@
+.page {
+  position: relative;
+}
+
+/* 内容 */
+.weui-article {
+  background: #fff;
+  overflow: hidden;
+}
+
+.weui-article__h1 {
+  font-size: 17px;
+  margin-bottom: 0px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.weui-span {
+  display: block;
+  text-align: center;
+  padding: 0px 0px 5px;
+  margin-bottom: 10px;
+  border-bottom: 1px dashed #ddd;
+}
+
+.weui-span text {
+  font-size: 28rpx;
+  color: #aaa;
+  margin-right: 10px;
+}
+
+.weui-span image {
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.weui-article__p {
+  margin: 20rpx;
+  font-size: 30rpx;
+  padding-bottom: 20rpx;
+}
+
+image.weui-article__img {
+  width: 100%;
+  display: block;
+}

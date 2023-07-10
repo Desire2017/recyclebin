@@ -1,0 +1,218 @@
+/* pages/home/index.wxss */
+@import "/style/weui.wxss";
+
+.page {
+  display: block;
+  overflow: hidden;
+  background-color: #F7F7F7;
+}
+
+.banner {
+  /* margin: 10rpx 10rpx 0 10rpx;
+  border-radius: 10rpx; */
+}
+
+.banner image {
+  width: 100%;
+  display: block;
+  height: auto;
+}
+
+.banner1{
+  margin: 20rpx;
+}
+
+.banner1 image{
+  width: 100%;
+  display: block;
+  height: auto;
+  border-radius: 10rpx;
+}
+
+.banner2{
+  margin: 20rpx;
+}
+
+.banner2 image{
+  width: 100%;
+  display: block;
+  height: auto;
+  border-radius: 10rpx;
+}
+
+.flex-nav {
+  display: block;
+  overflow: hidden;
+  margin: 20rpx;
+  border-radius: 30rpx;
+  background-color: #fff;
+}
+
+.top {
+  margin-top: -90rpx;
+  position: relative;
+  padding: 30rpx 0;
+}
+
+.title {
+  display: flow-root;
+  margin: 10rpx;
+}
+
+.weui-cell__l {
+  float: left;
+  display: inline;
+}
+
+.weui-cell__r {
+  float: right;
+  display: inline;
+  font-size: 32rpx;
+  color: rgb(143, 142, 142);
+}
+
+.trend-title {
+  margin-top: -50rpx;
+  display: flow-root;
+  z-index: 999;
+  font-size: 30rpx;
+  color: #fff;
+}
+
+.flex_item {
+  display: inline-block;
+  width: 25%;
+  text-align: center;
+  font-size: 20rpx;
+  color: #353535;
+  background-color: #fff;
+}
+
+.flex_item1 {
+  display: inline-block;
+  width: 16.6%;
+  text-align: center;
+  font-size: 18rpx;
+  color: #353535;
+  background-color: #fff;
+}
+
+
+.flex_item2 {
+  display: inline-block;
+  width: 50%;
+  text-align: center;
+  font-size: 20rpx;
+  color: #353535;
+  background-color: #fff;
+}
+
+
+.flex_item3 {
+  display: inline-block;
+  width: 25%;
+  text-align: center;
+  font-size: 20rpx;
+  color: #353535;
+  background-color: #fff;
+}
+
+.placeholder {
+  padding: 5px;
+  display: block;
+  color: #333;
+  font-size: 24rpx;
+}
+
+.placeholder1 {
+  display: block;
+  color: #333;
+  font-size: 20rpx;
+}
+
+
+
+.flex_item image {
+  height: 80rpx;
+  width: 80rpx;
+  display: block;
+  margin: 0 auto;
+}
+
+.flex_item1 image {
+  height: 60rpx;
+  width: 60rpx;
+  display: block;
+  margin: 0 auto;
+}
+
+.flex_item2 image {
+  height: 250rpx;
+  width: 320rpx;
+  display: block;
+  margin: 0 auto;
+  border-radius: 20rpx;
+}
+
+.flex_item3 image {
+  height: 150rpx;
+  width: 150rpx;
+  display: block;
+  margin: 0 auto;
+  border-radius: 20rpx;
+}
+
+.prodown {
+  font-size: 32rpx;
+  display: block;
+  clear: both;
+  overflow: hidden;
+  background: #fff;
+  text-align: center;
+  color: #707070;
+}
+
+/* 悬浮 服务/顶部 */
+.service {
+  z-index: 99;
+  width: 90rpx;
+  height: 90rpx;
+  position: fixed;
+  bottom: 50rpx;
+  right: 30rpx;
+  border-radius: 50%;
+  display: block;
+  z-index: 1;
+  background-color: rgba(241, 238, 238, 0.877);
+}
+
+.service image {
+  width: 90rpx;
+  height: 90rpx;
+  position: fixed;
+  bottom: 50rpx;
+  right: 30rpx;
+  border-radius: 50%;
+}
+
+.share {
+  z-index: 99;
+  width: 90rpx;
+  height: 90rpx;
+  position: fixed;
+  bottom: 180rpx;
+  right: 30rpx;
+  border-radius: 50%;
+  display: block;
+  z-index: 1;
+  background-color: rgba(241, 238, 238, 0.877);
+}
+
+.share image {
+  width: 90rpx;
+  height: 90rpx;
+  position: fixed;
+  bottom: 180rpx;
+  right: 30rpx;
+  border-radius: 50%;
+}

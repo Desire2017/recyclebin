@@ -1,0 +1,61 @@
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-tab">
+      <view class="weui-navbar">
+        <view bindtap="allOrders" class="weui-navbar__item {{activeIndex==0?'weui-bar__item_on':''}}" data-id="99" id="0">
+          <view class="weui-navbar__title">{{name1}}</view>
+        </view>
+        <view bindtap="allOrders" class="weui-navbar__item {{activeIndex==1?'weui-bar__item_on':''}}" data-id="0" id="1">
+          <view class="weui-navbar__title">{{name2}}</view>
+        </view>
+        <view bindtap="allOrders" class="weui-navbar__item {{activeIndex==2?'weui-bar__item_on':''}}" data-id="1" id="2">
+          <view class="weui-navbar__title">{{name3}}</view>
+        </view>
+        <view bindtap="allOrders" class="weui-navbar__item {{activeIndex==3?'weui-bar__item_on':''}}" data-id="2" id="3">
+          <view class="weui-navbar__title">{{name4}}</view>
+        </view>
+      </view>
+      <view class="weui-tab__panel">
+        <view class="weui-tab__content">
+          <view class="weui-panel weui-panel_access" wx:for="{{orders}}" wx:key="*this">
+            <navigator url="/pages/user/order/orderInfo?id={{item.id}}">
+              <view class="weui-panel__hd"> <image src="{{item.image}}"/>订单号：{{item.tradeNo}}
+                <text class="yi">{{item.type}}</text>
+              </view>
+              <view class="weui-panel__bd" >
+                <view class="weui-media-box weui-media-box_appmsg">
+                  <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                    <view class="weui-media-box__title"> 回收类别：{{item.categoryName}} </view>
+                    <view class="weui-media-box__title"> 回收规格：{{item.set}} </view>
+                    <view class="weui-media-box__title"> 预约时间：{{item.date}} </view>
+                    <view class="weui-media-box__title"> 下单时间：{{item.time}} </view>
+                  </view>
+                </view>
+              </view>
+            </navigator>
+            <view class="weui-panel__ft">
+              <view class="weui-cell weui-cell_access weui-cell_link">
+                <view class="weui-cell__bd textr">
+                  <view bindtap="checkMaster" class="dd_gr" data-id="{{item.id}}" style="{{item.intState==1?'':'display:none'}}">师傅信息</view>
+                  
+                  <navigator class="dd_pj" style="{{item.state==2?'':'display:none'}}" url="/pages/user/order/comment?id={{item.id}}">评价</navigator>
+                  <view bindtap="cancelConfirm" class="dd_sc" data-id="{{item.id}}" style="{{item.state==0?'':'display:none'}}">取消订单</view>
+                </view>
+              </view>
+            </view>
+            <view class="weui-panel__ft explain">{{item.explain}}</view>
+          </view>
+        </view>
+        <view class="weui-tab__content" wx:if="{{!orders.length}}">
+          <view class="weui-panel weui-panel_access noorder">
+            <image class="icon" src="/images/search2.png">
+            </image>
+            <text class="text">您还没有订单~先去同步订单吧~</text>
+            <button bindtap="goShopping" lang="zh_CN" type="primary" style="font-size: 30rpx;background-color: #0080F3;">去预约~ </button>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <loading hidden="{{hiddenLoading}}">正在加载</loading>
+</view>

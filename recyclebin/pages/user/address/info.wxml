@@ -1,0 +1,60 @@
+<view class="page">
+   <!-- 提交表单 -->
+   <view class="flex-nav">
+    <view class="title">
+      <view class="weui-cell__l">回收地址
+      </view>
+    </view>
+    <form bindsubmit="submit">
+
+      <view class='flex_item_info'>
+        <view class='placeholder'>
+          <view class="weui-cell__bd">
+            <image src="/images/icon_name.png"></image>
+            <input class="weui-input" name="name" value="{{name}}" placeholder="输入真实姓名"></input>
+          </view>
+        </view>
+      </view>
+      <view class='flex_item_info'>
+        <view class='placeholder'>
+          <view class="weui-cell__bd">
+            <image src="/images/icon_phone.png"></image>
+            <input type="number" class="weui-input" name="phone" value="{{phone}}" placeholder="输入真实手机号"></input>
+          </view>
+        </view>
+      </view>
+      <view class='flex_item_info'>
+        <view class='placeholder'>
+          <view class="weui-cell__bd">
+            <image src="/images/icon_address.png"></image>
+            <picker bindchange="bindRegionChange" customItem="{{customItem}}" mode="region" value="{{region}}">
+              <view class="picker weui-input address" name="region">
+                {{province}} {{city}} {{district}}
+              </view>
+            </picker>
+          </view>
+        </view>
+      </view>
+      <view class='flex_item_info'>
+        <view class='placeholder'>
+          <view class="weui-cell__bd">
+            <image src="/images/icon_street.png"></image>
+            <input type="text" class="weui-input" name="address" value="{{street}}" placeholder="详细地址"></input>
+          </view>
+        </view>
+      </view>
+      <view class="weui-btn-area">
+        <button class="weui-btn" formType="submit" type="primary">确认提交</button>
+      </view>
+    </form>
+  </view>
+  <view class="safe">
+    <view class='placeholder'>
+      <view class="weui-cell__bd">
+        <view class="safe_order">
+          <image src="/images/icon_safe.png" mode="widthFix"></image>信息加密处理，全面保障您的个人信息安全
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

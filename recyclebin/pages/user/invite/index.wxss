@@ -1,0 +1,39 @@
+page {
+  width: 100%;
+  height: 100%;
+  background: #f4f4f4;
+}
+
+.erweima {
+  margin: 60rpx auto;
+  width: 688rpx;
+  height: 992rpx;
+  background: #fff;
+  border: 1px solid #dcdcdc;
+  border-radius: 30rpx;
+}
+
+.erweima .name {
+  margin-bottom: 20rpx;
+  font-size: 32rpx;
+}
+
+.erweima .head {
+  width: 556rpx;
+  margin: 60rpx auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.erweima .save {
+  margin: 0px 150rpx;
+  margin-top: 64rpx;
+  text-align: center;
+  height: 75rpx;
+  line-height: 75rpx;
+  line-break: 75rpx;
+  color: #fff;
+  background: #34cc67;
+  border-radius: 10rpx;
+}

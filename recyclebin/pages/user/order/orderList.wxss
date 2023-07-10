@@ -1,0 +1,202 @@
+@import "/style/weui.wxss";
+
+.page {
+  display: block;
+  overflow: hidden;
+  background-color: #F7F7F7;
+}
+
+.weui-navbar {
+  background: #fff;
+  margin-bottom: 20rpx;
+  border-bottom: none;
+}
+
+.weui-panel_access {
+  border-radius: 30rpx;
+  margin: 20rpx;
+}
+
+.weui-navbar__item {
+  padding: 25rpx 0;
+}
+
+.weui-navbar__title {
+  font-size: 32rpx;
+}
+
+.weui-navbar__item.weui-bar__item_on {
+  color: #0080F3;
+}
+
+
+.weui-panel__hd {
+  font-size: 26rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+.weui-media-box__thumb {
+  border-radius: 30rpx;
+}
+
+.weui-media-box {
+  padding: 25rpx;
+  background: #fff;
+}
+
+
+.weui-panel__hd image {
+  height: 60rpx;
+  width: 60rpx;
+  float: left;
+}
+
+.weui-media-box_appmsg {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: start;
+  align-items: start;
+}
+
+.weui-panel__bd {
+  background-color: #fff;
+}
+
+.weui-media-box__title {
+  text-align: left;
+  margin-left: 20rpx;
+}
+
+text.yi {
+  color: #0080F3;
+  margin-left: 10rpx;
+}
+
+text.jiage {
+  text-align: center;
+  color: #f25a3b;
+}
+
+text.qu {
+  color: #9cf;
+  float: right;
+}
+
+.textr {
+  text-align: right;
+}
+
+navigator.dd_pj {
+  display: inline-block;
+  padding: 10rpx 20rpx;
+  font-size: 30rpx;
+  color: #fff;
+  background: #f4c658;
+  border-radius: 10rpx;
+  margin-right: 20rpx;
+}
+
+navigator.dd_gm {
+  display: inline-block;
+  padding: 10rpx 20rpx;
+  font-size: 30rpx;
+  color: #fff;
+  background: #f25a3b;
+  border-radius: 10rpx;
+  margin-right: 20rpx;
+}
+
+view.dd_gm {
+  display: inline-block;
+  padding: 10rpx 20rpx;
+  font-size: 30rpx;
+  color: #fff;
+  background: #f25a3b;
+  border-radius: 10rpx;
+  margin-right: 20rpx;
+}
+
+view.dd_gr {
+  display: inline-block;
+  padding: 10rpx 20rpx;
+  font-size: 30rpx;
+  color: #fff;
+  background: rgb(40, 173, 151);
+  border-radius: 10rpx;
+  margin-right: 20rpx;
+}
+
+view.dd_sc {
+  display: inline-block;
+  padding: 10rpx 20rpx;
+  font-size: 30rpx;
+  color: #333;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10rpx;
+}
+
+.weui-cell {
+  padding: 20rpx 25rpx;
+}
+.weui-media-box__bd_in-appmsg{
+  margin: 10rpx;
+}
+
+
+.weui-media-box__title {
+  color: #999;
+  font-size: 32rpx;
+  text-overflow: inherit;
+  white-space: inherit;
+  line-height: 40rpx;
+  margin: 20rpx;
+}
+
+.weui-panel:before {
+  top: 0;
+  border-top: none;
+}
+
+.weui-panel:after {
+  bottom: 0;
+  border-bottom: none;
+}
+
+.weui-panel__hd:after {
+  border-bottom: none;
+}
+
+.weui-cell:before {
+  border-top: none;
+}
+
+
+.explain{
+  font-size: 26rpx;
+  color: #999;
+  text-align: center;
+  margin: 10rpx 20rpx;
+}
+
+
+.noorder .icon {
+  margin: 0 auto;
+  width: 240rpx;
+  height: 240rpx;
+  display: block;
+  border-radius: 50%;
+}
+
+.noorder .text {
+  display: block;
+  clear: both;
+  overflow: hidden;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #f4c658;
+}

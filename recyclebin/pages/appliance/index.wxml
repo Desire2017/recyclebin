@@ -1,0 +1,110 @@
+<import src="/wxParse/wxParse.wxml" />
+<view class="page">
+  <!--轮播图-->
+  <view class="banner">
+    <swiper autoplay="true" circular="true" style="height:{{headbanner}}">
+      <swiper-item wx:for="{{topbg}}" wx:key="*this">
+        <image class="slide-image" bindload="imgH" mode="widthFix" src="{{item.image}}"></image>
+      </swiper-item>
+    </swiper>
+  </view>
+  <!--顶部菜单-->
+  <view class="flex-nav top">
+    <view class='flex_item' wx:for="{{applianceClass}}" wx:key="*this">
+      <view class='placeholder1'>
+        <view data-index="{{index}}" data-id="{{item.id}}">
+          <image src="{{item.image}}" class="logoimg" mode='widthFix' />{{item.name}}
+        </view>
+      </view>
+    </view>
+
+  </view>
+  <!-- 提交表单 -->
+  <form bindsubmit="submit">
+    <view class="flex-nav">
+      <view class="title">
+        <view class="weui-cell__l">上门取件
+        </view>
+      </view>
+
+      <view class="address" wx:if="{{showView}}">
+        <navigator class="weui-cell weui-cell_access" hoverClass="weui-cell_active" url="/pages/user/address/index">
+          <view class="weui-cell__bd">
+            <view class="ren">
+              回收人：{{name}}
+              <text class="fr">{{phone}}</text>
+            </view>
+            <view>取件地址：{{address}}</view>
+          </view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </navigator>
+      </view>
+      <view class="seaddress" wx:else>
+        <navigator class="weui-cell weui-cell_access" hoverClass="weui-cell_active" url="/pages/user/address/index">
+          <view class="weui-cell__bd">请选择/新建取件地址</view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </navigator>
+      </view>
+
+      <view class='flex_item_radio'>
+        <view class='radio_name'>请选择家电规格</view>
+        <radio-group name="set" class="radio-group" bindchange="radioChange">
+          <radio class="radio" wx:for-items="{{set}}" wx:key="name" value="{{item.name}}" checked="{{item.checked}}">
+            <text>{{item.name}}</text>
+          </radio>
+        </radio-group>
+      </view>
+      <view class="serviceContent" style="display: none;">
+        <view class="picName">请上照片（非必填，最多两张照片）</view>
+        <view class="picList">
+          <view wx:for="{{picList}}" wx:key='index' bindtap="handleImagePreview" wx:for-index="idx" data-idx="{{idx}}" class="picView">
+            <image class="pic" mode="aspectFill" src="{{item.filePath}}"></image>
+            <view class="delView" data-idx="{{idx}}" catchtap="delPic">
+              <image src='/images/icon_delete.png'></image>
+              <i class="fa fa-trash-o fa-lg"></i>
+            </view>
+          </view>
+          <view class="picAdd" wx:if="{{picList.length<2}}" bindtap="chooseimage">
+            <image src="/images/icon_photo.png"></image>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="flex-nav explain">
+      <view class="title">
+        <view class="weui-cell__l">回收说明
+        </view>
+      </view>
+      <view class="weui-article">
+        <view class="weui-article__section">
+          <view class="weui-article__p wxParse">
+            <template is="wxParse" data="{{wxParseData:content.nodes}}" />
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="profoot">
+      <view class="zhuye">
+        <button size="mini" bindtap="goHome">
+          <image src="/images/icon_home.png"></image>
+        </button>
+        <view>首页</view>
+      </view>
+      <view class="zhuye">
+        <button open-type="contact" size="mini">
+          <image src="/images/icon_server.png"></image>
+        </button>
+        <view>客服</view>
+      </view>
+      <view class="zhuye">
+        <button open-type="share" size="mini">
+        <image src="/images/icon_share.png"></image>
+        </button>
+        <view>分享</view>
+      </view>
+      <view class="yuyue">
+        <button class="weui-btn" formType="submit" type="primary">立即预约</button>
+      </view>
+    </view>
+  </form>
+</view>

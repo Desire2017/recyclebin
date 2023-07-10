@@ -1,0 +1,105 @@
+<!--pages/home/index.wxml-->
+<view class="page">
+  <!--轮播图-->
+  <view class="banner">
+    <swiper autoplay="true" circular="true" duration="1000" indicatorActiveColor="#fff" indicatorColor="#06a9fa" style="height:{{headbanner}}">
+      <swiper-item wx:for="{{banners3}}" wx:key="*this">
+        <navigator url="{{item.url}}">
+          <image class="slide-image" bindload="imgH" mode="widthFix" src="{{item.image}}"></image>
+        </navigator>
+      </swiper-item>
+    </swiper>
+  </view>
+  <!--顶部菜单-->
+  <view class="flex-nav top">
+    <view class='flex_item1' wx:for="{{category1}}" wx:key="*this">
+      <view class='placeholder1'>
+        <view bindtap="clothes" data-index="{{index}}" data-id="{{item.id}}">
+          <image src="{{item.image}}" class="logoimg" mode='widthFix' />{{item.name}}
+        </view>
+      </view>
+    </view>
+
+  </view>
+
+  <view class="banner1">
+    <swiper autoplay="true" circular="true" duration="1000" indicatorActiveColor="#fff" indicatorColor="#06a9fa" interval="2500" style="height:{{headbanner2}}">
+      <swiper-item wx:for="{{banners2}}" wx:key="*this">
+        <navigator url="{{item.url}}">
+          <image bindload="imgH2" class="slide-image" mode="widthFix" src="{{item.image}}"></image>
+        </navigator>
+      </swiper-item>
+    </swiper>
+  </view>
+
+
+
+  <!--中部菜单-->
+  <view class="flex-nav">
+    <view class='flex_item' wx:for="{{category}}" wx:key="*this">
+      <view class='placeholder'>
+        <view bindtap="goCategory" data-index="{{index}}" data-id="{{item.id}}">
+          <image src="{{item.image}}" class="logoimg" mode='widthFix' />{{item.name}}
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="banner2">
+    <swiper autoplay="true" circular="true" duration="1000" indicatorActiveColor="#fff" indicatorColor="#06a9fa" indicatorDots="true" interval="2500" style="height:{{headbanner1}}">
+      <swiper-item wx:for="{{banners1}}" wx:key="*this">
+        <navigator url="{{item.url}}">
+          <image bindload="imgH1" class="slide-image" mode="widthFix" src="{{item.image}}"></image>
+        </navigator>
+      </swiper-item>
+    </swiper>
+  </view>
+
+  <!-- 动态 -->
+
+  <view class="flex-nav">
+    <view class="title">
+      <view class="weui-cell__l">动态</view>
+      <view class="weui-cell__r" bindtap="goTrend">查看更多>
+      </view>
+    </view>
+    <view class='flex_item2' wx:for="{{banners4}}" wx:key="*this">
+      <view class='placeholder'>
+        <view>
+          <image src="{{item.image}}" class="logoimg" mode='widthFix' />
+          <view class="trend-title">{{item.title}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 合作伙伴 -->
+  <view class="flex-nav">
+    <view class="title">
+      <view class="weui-cell__l">合作伙伴
+      </view>
+    </view>
+    <view class='flex_item3' wx:for="{{partner}}" wx:key="*this">
+      <view class='placeholder'>
+        <view>
+          <image src="{{item.image}}" class="logoimg" mode='widthFix' />
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="share">
+    <button size="mini" openType="share">
+      <image src="{{share}}"></image>
+    </button>
+  </view>
+
+  <view class="service">
+    <button size="mini" openType="contact">
+      <image src="{{service}}"></image>
+    </button>
+  </view>
+
+  <view class="prodown">----已经到底啦----</view>
+  <loading hidden="{{hiddenLoading}}">正在加载</loading>
+</view>

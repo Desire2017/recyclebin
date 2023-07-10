@@ -1,0 +1,168 @@
+<import src="/wxParse/wxParse.wxml" />
+<view class="page">
+  <!--轮播图-->
+  <view class="banner">
+    <swiper autoplay="true" circular="true" style="height:{{headbanner}}">
+      <swiper-item wx:for="{{topbg}}" wx:key="*this">
+        <image class="slide-image" bindload="imgH" mode="widthFix" src="{{item.image}}"></image>
+      </swiper-item>
+    </swiper>
+  </view>
+  <!--顶部菜单-->
+  <view class="flex-nav top">
+    <view class='flex_item' wx:for="{{clothesClass}}" wx:key="*this">
+      <view class='placeholder1'>
+        <view data-index="{{index}}" data-id="{{item.id}}">
+          <image src="{{item.image}}" class="logoimg" mode='widthFix' />{{item.name}}
+        </view>
+      </view>
+    </view>
+
+  </view>
+  <!-- 提交表单 -->
+  <view class="flex-nav">
+    <view class="title">
+      <view class="weui-cell__l">上门取件
+      </view>
+    </view>
+    <form bindsubmit="submit">
+      <view class="address" wx:if="{{showView}}">
+        <navigator class="weui-cell weui-cell_access" hoverClass="weui-cell_active" url="/pages/user/address/index">
+          <view class="weui-cell__bd">
+            <view class="ren">
+              回收人：{{name}}
+              <text class="fr">{{phone}}</text>
+            </view>
+            <view>取件地址：{{address}}</view>
+          </view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </navigator>
+      </view>
+      <view class="seaddress" wx:else>
+        <navigator class="weui-cell weui-cell_access" hoverClass="weui-cell_active" url="/pages/user/address/index">
+          <view class="weui-cell__bd">请选择/新建取件地址</view>
+          <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        </navigator>
+      </view>
+
+      <view class='flex_item_info'>
+        <view class='placeholder'>
+          <view class="weui-cell__bd">
+            <image src="/images/icon_date.png"></image>
+            <picker mode="date" name="date" value="{{date}}" start="{{startDate}}" bindchange="bindDateChange">
+              <view class="picker weui-input address">
+                选择日期： {{date}}
+              </view>
+            </picker>
+          </view>
+        </view>
+      </view>
+      <view class='flex_item_info'>
+        <view class='placeholder'>
+          <view class="weui-cell__bd">
+            <image src="/images/icon_time.png"></image>
+            <picker mode="time" name="time" value="{{time}}" start="9:00" end="19:00" bindchange="bindTimeChange">
+              <view class="picker weui-input address">
+                选择时间： {{time}}
+              </view>
+            </picker>
+          </view>
+        </view>
+      </view>
+      <view class='flex_item_radio'>
+        <view class='radio_name'>请选择预估数量</view>
+        <radio-group name="clothesSet" class="radio-group" bindchange="radioChange">
+          <radio class="radio" wx:for-items="{{set}}" wx:key="name" value="{{item.name}}" checked="{{item.checked}}">
+            <text>{{item.name}}</text>
+          </radio>
+        </radio-group>
+      </view>
+      <view class="serviceContent" style="display: none;">
+        <view class="picName">请上照片（非必填，最多两张照片）</view>
+        <view class="picList">
+          <view wx:for="{{picList}}" wx:key='index' bindtap="handleImagePreview" wx:for-index="idx" data-idx="{{idx}}" class="picView">
+            <image class="pic" mode="aspectFill" src="{{item.filePath}}"></image>
+            <view class="delView" data-idx="{{idx}}" catchtap="delPic">
+              <image src='/images/icon_delete.png'></image>
+              <i class="fa fa-trash-o fa-lg"></i>
+            </view>
+          </view>
+          <view class="picAdd" wx:if="{{picList.length<2}}" bindtap="chooseimage">
+            <image src="/images/icon_photo.png"></image>
+          </view>
+        </view>
+      </view>
+      <view class='flex_item_checkbox'>
+        <checkbox-group name="agree" bindchange="checkboxChange">
+          <label class="checkbox" wx:for="{{agree}}" wx:key="*this">
+            <checkbox value="{{item.name}}" checked="{{item.checked}}" />已阅读并同意<navigator url='/pages/agreement/index'>{{item.name}}</navigator>
+          </label>
+        </checkbox-group>
+      </view>
+
+      <view class="weui-btn-area">
+        <button class="weui-btn" formType="submit" type="primary">确认提交</button>
+      </view>
+    </form>
+  </view>
+  <view class="flex-nav">
+    <view class='flex_item_down'>
+      <view class='placeholder'>
+        <view bindtap="openPopup" data-index="1">
+          <button size="mini">
+            <image src="/images/icon_feedback_c.png" class="logoimg" mode='widthFix' />
+          </button>
+          <view class="trend-title1">预约须知</view>
+          <view class="trend-title2">书籍回收说明</view>
+        </view>
+      </view>
+    </view>
+    <view class='flex_item_down'>
+      <view class='placeholder'>
+        <view>
+          <button size="mini" openType="contact">
+            <image src="/images/icon_server_c.png" class="logoimg" mode='widthFix' />
+          </button>
+          <view class="trend-title1">在线客服</view>
+          <view class="trend-title2">9:00~19:00</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="safe">
+    <view class='placeholder'>
+      <view class="weui-cell__bd">
+        <view class="safe_order">
+          <image src="/images/icon_safe.png" mode="widthFix"></image>信息加密处理，全面保障您的个人信息安全
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 分享 -->
+  <view class="share">
+    <button size="mini" openType="share">
+      <image src="{{share}}"></image>
+    </button>
+  </view>
+  <view class="service">
+    <button size="mini" openType="contact">
+      <image src="{{service}}"></image>
+    </button>
+  </view>
+</view>
+<view class="popup-box" wx:if="{{showIndex=='1'}}" bindtap="closePopup"></view>
+<view class="info-center" style="top:{{height*0.3}}px;height:{{height*0.4}}px;" wx:if="{{showIndex=='1'}}">
+  <view>
+    <view class="row-info">
+      <view class="weui-article">
+        <view class="weui-article__section">
+          <view class="weui-article__p wxParse">
+            <template is="wxParse" data="{{wxParseData:content.nodes}}" />
+          </view>
+          <view class="btn" bindtap="closePopup">确认</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,128 @@
+@import "/style/weui.wxss";
+
+.page {
+  display: block;
+  overflow: hidden;
+  background-color: #F7F7F7;
+}
+
+
+.seaddress {
+  display: block;
+  overflow: hidden;
+  margin: 20rpx;
+  border-radius: 30rpx;
+  background-color: #fff;
+}
+
+
+.weui-cell__ft_in-access:after {
+  border-width: 1px 1px 0 0;
+  top: -1px;
+  position: absolute;
+  top: 50%;
+  margin-top: -4px;
+  right: 1px;
+}
+
+.seaddress {
+  display: block;
+  clear: both;
+  overflow: hidden;
+  background: #fff;
+  padding: 20rpx;
+  font-size: 28rpx;
+}
+
+.weui-cell {
+  margin: 0;
+  padding: 0;
+}
+
+.ren {
+  display: block;
+  clear: both;
+  overflow: hidden;
+  height: 60rpx;
+  line-height: 60rpx;
+}
+
+.choose{
+  float: left;
+  margin-left: 30rpx;
+}
+
+.moren {
+  display: block;
+  background: #07c160;
+  color: #fff;
+  padding: 0 10rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  border-radius: 5rpx;
+  width: 60rpx;
+  text-align: center;
+}
+
+.shanchu {
+  display: block;
+  background: #f03131;
+  color: #fff;
+  padding: 0 10rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  border-radius: 5rpx;
+  width: 60rpx;
+  text-align: center;
+}
+
+.xuanze {
+  display: block;
+  background: #0080F3;
+  color: #fff;
+  padding: 0 10rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  border-radius: 5rpx;
+  width: 60rpx;
+  text-align: center;
+}
+
+.bianji{
+  display: block;
+  background: #0080F3;
+  color: #fff;
+  padding: 0 10rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  border-radius: 5rpx;
+  width: 60rpx;
+  text-align: center;
+}
+
+.tianjia {
+  display: flex;
+  position: fixed;
+  bottom: 20rpx;
+  clear: both;
+  overflow: hidden;
+  vertical-align: middle;
+  align-items: center;
+  background-color: #fff;
+  width: 100%;
+}
+
+.tianjia button {
+  font-size: 32rpx;
+  width: 100%;
+  margin: 20rpx;
+}
+
+.zanwu {
+  display: block;
+  height: 120rpx;
+  line-height: 120rpx;
+  color: #999;
+  text-align: center;
+  font-size: 30rpx;
+}

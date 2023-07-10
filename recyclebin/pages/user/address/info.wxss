@@ -1,0 +1,180 @@
+@import "/style/weui.wxss";
+
+.page {
+  display: block;
+  overflow: hidden;
+  background-color: #F7F7F7;
+}
+
+
+.flex-nav {
+  display: block;
+  overflow: hidden;
+  margin: 20rpx;
+  border-radius: 30rpx;
+  background-color: #fff;
+}
+
+
+.title {
+  display: flow-root;
+  margin: 10rpx;
+}
+
+.weui-cell__l {
+  float: left;
+  display: inline;
+}
+
+.weui-cell__r {
+  float: right;
+  display: inline;
+  font-size: 32rpx;
+  color: rgb(143, 142, 142);
+}
+
+.trend-title {
+  margin-top: -50rpx;
+  display: flow-root;
+  z-index: 999;
+  font-size: 30rpx;
+  color: #fff;
+}
+
+.flex_item {
+  display: inline-block;
+  width: 20%;
+  text-align: center;
+  font-size: 20rpx;
+  color: #353535;
+  background-color: #fff;
+}
+.flex_item image {
+  height: 80rpx;
+  width: 80rpx;
+  display: block;
+  margin: 0 auto;
+}
+
+.placeholder1 {
+  padding: 5px;
+  display: block;
+  color: #333;
+  font-size: 20rpx;
+}
+
+
+
+.flex_item image {
+  height: 80rpx;
+  width: 80rpx;
+  display: block;
+  margin: 0 auto;
+}
+
+.infos {
+  display: block;
+  clear: both;
+  overflow: hidden;
+  border-radius: 30rpx;
+  margin: 20rpx;
+}
+
+.info {
+  display: block;
+  clear: both;
+  overflow: hidden;
+  background: #fff;
+}
+
+.info .weui-cell {
+  padding: 20rpx 10rpx;
+  font-size: 34rpx;
+}
+
+.info_order {
+  text-align: center;
+  font-size: 36rpx;
+}
+
+.flex-nav {
+  display: block;
+  overflow: hidden;
+  background: #fff;
+}
+
+.flex_item {
+  display: inline-block;
+  width: 16.6%;
+  text-align: center;
+  font-size: 30rpx;
+  color: #353535;
+  background-color: #fff;
+}
+
+.flex_item_info {
+  margin: 0 20rpx 20rpx 20rpx;
+  text-align: left;
+  font-size: 26rpx;
+  background-color: #f7f7f7;
+  border-radius: 20rpx;
+}
+
+.picName{
+  margin: 10rpx;
+  font-size: 32rpx;
+}
+
+.placeholder {
+  padding: 5px;
+  display: block;
+  color: #707070;
+  font-size: 30rpx;
+}
+
+.flex_item_info image {
+  height: 48rpx;
+  width: 48rpx;
+  display: block;
+  float: left;
+  padding-top: 10rpx;
+}
+
+.flex_item_info .weui-input {
+  padding-left: 10rpx;
+}
+
+.address{
+  margin-left: 50rpx;
+}
+
+
+.weui-btn-area button {
+  border-radius: 20rpx;
+  font-size: 32rpx;
+  background-color: #0080F3;
+  width: 240rpx;
+  color: #fff;
+}
+
+.safe {
+  display: block;
+  clear: both;
+  overflow: hidden;
+  background: #fff;
+}
+
+.safe_order {
+  text-align: center;
+  font-size: 26rpx;
+  justify-content: center;
+  align-items: center;
+}
+
+.safe_order image {
+  height: 32rpx;
+  width: 32rpx;
+  margin-bottom: -10rpx;
+}
+
+

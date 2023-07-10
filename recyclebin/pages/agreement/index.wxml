@@ -1,0 +1,11 @@
+<!--pages/agreement/index.wxml-->
+<import src="../../wxParse/wxParse.wxml" />
+<view class='page'>
+  <view class="weui-article">
+    <view class="weui-article__section">
+      <view class="weui-article__p wxParse">
+        <template is="wxParse" data="{{wxParseData:content.nodes}}" />
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,32 @@
+<view class="page">
+  <form bindsubmit="submit">
+    <view class='flex_item_radio'>
+      <view class='radio_name'>选择反馈</view>
+      <radio-group class="radio-group" bindchange="radioChange">
+        <radio class="radio" wx:for-items="{{class}}" wx:key="name" value="{{item.name}}" checked="{{item.checked}}">
+          <text>{{item.name}}</text>
+        </radio>
+      </radio-group>
+    </view>
+    <view class="liuyan">
+      <text class="fl">留言反馈：</text>
+      <view class="textarea-wrp">
+        <textarea name="feedback" style="height: 6em" value="{{feedback}}" />
+      </view>
+    </view>
+    <view class="weui-btn-area">
+      <button class="weui-btn" formType="submit" type="primary">提交</button>
+    </view>
+  </form>
+  <view class="seaddress" style="{{list.length==0?'display:none':''}}">
+    <view class="weui-cell weui-cell_access" wx:for="{{list}}" wx:key="*this">
+      <view class="weui-cell__bd">
+        <view style="color: #f8af11;">{{item.name}}：{{item.content}}</view>
+        <view style="color: #f8af11;">时间：{{item.time}}</view>
+        <view style="color: #06a9fa;">客服回复：{{item.replycontent}}</view>
+        <view style="color: #06a9fa;">时间：{{item.replytime}}</view>
+      </view>
+    </view>
+  </view>
+  <view class="prodown" style="{{list.length==0?'display:none':''}}" bindtap="getMore">==查 看 更 多==</view>
+</view>

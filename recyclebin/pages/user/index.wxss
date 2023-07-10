@@ -1,0 +1,253 @@
+/* pages/user/index.wxss */
+@import "../../style/weui.wxss";
+
+page {
+  position: relative;
+  background-color: #F7F7F7;
+}
+
+.page_top {
+  display: block;
+  padding: 20rpx;
+  overflow: hidden;
+  /* background: #6cbeee; */
+  /* background-color: #1E9FFF; */
+  background-color: #0080F3;
+  color: #fff;
+  height: 240rpx;
+}
+
+.page_tx {
+  position: relative;
+  margin-right: 10px;
+}
+
+.page_tx image {
+  width: 60px;
+  height: 60px;
+  display: block;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+
+.idm {
+  font-size: 30rpx;
+}
+
+.mc {
+  font-size: 36rpx;
+}
+
+.sj {
+  font-size: 30rpx;
+}
+
+.tj {
+  font-size: 30rpx;
+  color: #ffc;
+}
+
+.bac {
+  margin: 20rpx;
+  padding: 10rpx;
+}
+
+.bactext text {
+  display: block;
+  text-align: center;
+  font-size: 30rpx;
+}
+.bac view:first-child {
+  border-right: 1px solid#fff;
+}
+
+.bac view:last-child {
+  border-left: 1px solid#fff;
+}
+
+.tixian .txan {
+  border: 2rpx solid #fff;
+  background-color: #0080F3;
+  color: #fff;
+  font-size: 28rpx;
+  border-radius: 30rpx;
+  margin-right: 30rpx;
+}
+
+.myServer {
+  display: block;
+  clear: both;
+  overflow: hidden;
+  margin: 20rpx 20rpx;
+  border-radius: 30rpx;
+}
+
+.server {
+  display: block;
+  clear: both;
+  overflow: hidden;
+  background: #fff;
+}
+
+.server .weui-cell {
+  padding: 10rpx;
+  font-size: 34rpx;
+}
+
+.server .weui-cell__hd image {
+  display: block;
+  width: 48rpx;
+  height: 48rpx;
+}
+
+.server .weui-cell__ft {
+  color: #0080F3;
+  font-weight: normal;
+  font-size: 34rpx;
+}
+
+.server .weui-cell__ft_in-access:after {
+  content: " ";
+  display: inline-block;
+  height: 6px;
+  width: 6px;
+  border-width: 1px 1px 0 0;
+  border-color: #fff;
+  border-style: solid;
+  transform: matrix(0.71, 0.71, -.71, 0.71, 0, 0);
+  top: -0px;
+  position: absolute;
+  top: 50%;
+  margin-top: -4px;
+  right: 2px;
+}
+
+.server_order {
+  margin-left: 20rpx;
+  font-size: 30rpx;
+}
+
+.flex-nav {
+  display: block;
+  overflow: hidden;
+  color: #707070;
+}
+
+.flex_item {
+  padding: 20rpx 0;
+  display: inline-block;
+  width: 25%;
+  text-align: center;
+  color: #707070;
+  font-size: 26rpx;
+  background-color: #fff;
+}
+
+.flex_item_server {
+  padding: 20rpx 0;
+  display: inline-block;
+  width: 20%;
+  text-align: center;
+  color: #707070;
+  font-size: 26rpx;
+  background-color: #fff;
+}
+
+.flex_item_tool {
+  padding: 20rpx 0;
+  display: inline-block;
+  width: 25%;
+  text-align: center;
+  color: #707070;
+  font-size: 26rpx;
+  background-color: #fff;
+}
+
+.placeholder {
+  padding: 5rpx;
+  display: block;
+}
+
+.flex_item image {
+  height: 48rpx;
+  width: 48rpx;
+  display: block;
+  margin: 0 auto 10rpx;
+}
+
+.placeholder #service {
+  height: 50px;
+  width: 50px;
+  display: block;
+  margin: 0 auto 10rpx;
+  background: #fff;
+}
+
+.flex_item_server image {
+  height: 48rpx;
+  width: 48rpx;
+  display: block;
+  margin: 0 auto 10rpx;
+}
+
+.flex_item_tool image {
+  height: 48rpx;
+  width: 48rpx;
+  display: block;
+  margin: 0 auto 10rpx;
+}
+
+.flex_item_server #service image {
+  height: 50px;
+  width: 50px;
+  display: block;
+  margin: 0 auto 10rpx;
+  margin-left: -20px;
+  margin-top: -20rpx;
+}
+
+.flex_item_tool #service image {
+  height: 50px;
+  width: 50px;
+  display: block;
+  margin: 0 auto 10rpx;
+  margin-left: -20px;
+  margin-top: -20rpx;
+}
+
+.contact {
+  z-index: 99;
+  width: 90rpx;
+  height: 90rpx;
+  position: fixed;
+  bottom: 50rpx;
+  right: 30rpx;
+  border-radius: 50%;
+  display: block;
+  z-index: 1;
+  background-color: #fff;
+  border: 4rpx #f4f4f4 solid;
+}
+
+/* 悬浮 服务/顶部 */
+.service {
+  z-index: 99;
+  width: 90rpx;
+  height: 90rpx;
+  position: fixed;
+  bottom: 100rpx;
+  right: 30rpx;
+  border-radius: 50%;
+  display: block;
+  z-index: 1;
+  background-color: rgba(241, 238, 238, 0.877); 
+}
+
+.service image {
+  width: 90rpx;
+  height: 90rpx;
+  position: fixed;
+  bottom: 100rpx;
+  right: 30rpx;
+  border-radius: 50%;
+}

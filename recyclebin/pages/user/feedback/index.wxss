@@ -1,0 +1,103 @@
+@import "../../../style/weui.wxss";
+.page {
+  display: block;
+  position: relative;
+  background-color: #f7f7f7;
+}
+
+
+
+
+.flex_item_radio {
+  margin-top: 30rpx;
+  display: inline-grid;
+  background-color: #fff;
+  border-radius: 20rpx;
+  margin: 20rpx;
+  padding: 10rpx;
+}
+
+.radio_name {
+  font-size: 32rpx;
+}
+
+.radio {
+  width: 46%;
+  height: 80rpx;
+  line-height: 80rpx;
+ 
+}
+.radio:nth-child(2n){
+  margin-left: 40rpx;
+}
+
+.liuyan {
+  display: block;
+  margin: 20rpx;
+  padding: 10rpx;
+  font-size: 32rpx;
+  clear: both;
+  overflow: hidden;
+  align-items: center;
+  line-height: 60rpx;
+  background-color: #fff;
+  border-radius: 20rpx;
+}
+
+
+textarea {
+  display: block;
+  width: 100%;
+  padding: 10rpx 0;
+  border: 2rpx solid #eee;
+  border-radius: 20rpx;
+}
+
+.textarea-wrp {
+  padding: 0 25rpx;
+  background-color: #fff;
+}
+
+.weui-btn {
+  font-size: 32rpx;
+}
+
+.weui-btn-area button{
+  font-size: 32rpx;
+    width: 240rpx;
+}
+
+weui-cell__ft_in-access:after {
+  border-width: 1px 1px 0 0;
+  position: relative;
+  top: -1px;
+  top: 50%;
+  margin-top: -4px;
+  right: 1px;
+}
+
+.seaddress {
+  display: block;
+  clear: both;
+  overflow: hidden;
+  background: #fff;
+  margin-bottom: 15rpx;
+  padding: 20rpx;
+  font-size: 30rpx;
+}
+
+
+.weui-cell {
+  margin: 0;
+  padding: 5px;
+}
+
+.prodown {
+  font-size: 28rpx;
+  display: block;
+  clear: both;
+  overflow: hidden;
+  background: #fff;
+  text-align: center;
+  color: #afafaf;
+}
