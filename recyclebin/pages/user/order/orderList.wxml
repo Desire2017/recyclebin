@@ -29,6 +29,7 @@
                     <view class="weui-media-box__title"> 回收规格：{{item.set}} </view>
                     <view class="weui-media-box__title"> 预约时间：{{item.date}} </view>
                     <view class="weui-media-box__title"> 下单时间：{{item.time}} </view>
+                    <view class="weui-media-box__title"> {{item.remark}} </view>
                   </view>
                 </view>
               </view>

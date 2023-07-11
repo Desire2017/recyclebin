@@ -6,11 +6,28 @@ Page({
     name: "",
     phone: "",
     region: ["选择-省-市-县/地区", "", ""],
-    province:"",
-    city:"",
-    district:"",
+    province:"选择-省",
+    city:"-市",
+    district:"-县",
+    latitude:"",
+    longitude:"",
     customItem: "",
 
+  },
+  //打开地图选择位置
+  getLocation:function(){
+    var self = this;
+    wx.chooseLocation({
+      success:function(res){
+        self.setData({
+          address:res.address
+        })
+        console.log("选点位置====",res.name);
+        console.log("详细地址====",res.address);
+        console.log("lat====",res.latitude);
+        console.log("lng====",res.latitude);
+      }
+    })
   },
   onLoad: function (options) {
     var aid = options.aid;

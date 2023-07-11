@@ -41,6 +41,7 @@ Page({
           date: o.data.result[0].date,
           time: o.data.result[0].time,
           set: o.data.result[0].set,
+          remark: o.data.result[0].remark,
         });
         wx.request({
           url: util.apiUrl + "GetAddressApi.ashx?type=4&id=" + o.data.result[0].aid,

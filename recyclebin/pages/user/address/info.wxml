@@ -1,6 +1,6 @@
 <view class="page">
-   <!-- 提交表单 -->
-   <view class="flex-nav">
+  <!-- 提交表单 -->
+  <view class="flex-nav">
     <view class="title">
       <view class="weui-cell__l">回收地址
       </view>
@@ -23,6 +23,7 @@
           </view>
         </view>
       </view>
+
       <view class='flex_item_info'>
         <view class='placeholder'>
           <view class="weui-cell__bd">
@@ -40,6 +41,14 @@
           <view class="weui-cell__bd">
             <image src="/images/icon_street.png"></image>
             <input type="text" class="weui-input" name="address" value="{{street}}" placeholder="详细地址"></input>
+          </view>
+        </view>
+      </view>
+      <view class='flex_item_info'>
+        <view class='placeholder'>
+          <view class="weui-cell__bd">
+            <image src="/images/icon_address.png"></image>
+            <input type="text" bindtap="getLocation" class="weui-input" name="addressInfo" value="{{address}}" placeholder="位置名称，详细地址"></input>
           </view>
         </view>
       </view>

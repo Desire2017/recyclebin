@@ -29,6 +29,7 @@
                 <view class="weui-media-box__title"> 订单编号：{{tradeNo}} </view>
                 <view class="weui-media-box__title"> 预约时间：{{date}} </view>
                 <view class="weui-media-box__title"> 下单时间：{{time}} </view>
+                <view class="weui-media-box__title"> {{remark}} </view>
               </view>
             </view>
           </view>
