@@ -5,7 +5,6 @@ Page({
   data: {
     name: "",
     phone: "",
-    region: ["选择-省-市-县/地区", "", ""],
     province: "选择-省",
     city: "-市",
     district: "-县",

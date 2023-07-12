@@ -28,11 +28,9 @@
         <view class='placeholder'>
           <view class="weui-cell__bd">
             <image src="/images/icon_address.png"></image>
-            <picker bindchange="bindRegionChange" customItem="{{customItem}}" mode="region" value="{{region}}">
-              <view class="picker weui-input address" name="region">
+              <view class="weui-input address" name="region">
                 {{province}} {{city}} {{district}}
               </view>
-            </picker>
           </view>
         </view>
       </view>
