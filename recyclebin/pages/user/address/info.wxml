@@ -36,11 +36,14 @@
           </view>
         </view>
       </view>
+      <view class="weui-btn-area">
+        <button class="weui-btn" bindtap="getLocation"  type="primary">获取地址</button>
+      </view>
       <view class='flex_item_info'>
         <view class='placeholder'>
           <view class="weui-cell__bd">
-            <image src="/images/icon_street.png"></image>
-            <input type="text" class="weui-input" name="address" value="{{street}}" placeholder="详细地址"></input>
+            <!-- <image src="/images/icon_street.png"></image> -->
+            <textarea type="text" name="address" style="height: 150rpx;padding: 10rpx;" value="{{street}}" placeholder="详细地址"></textarea>
           </view>
         </view>
       </view>

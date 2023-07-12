@@ -6,30 +6,47 @@ Page({
     name: "",
     phone: "",
     region: ["选择-省-市-县/地区", "", ""],
-    province:"选择-省",
-    city:"-市",
-    district:"-县",
-    latitude:"",
-    longitude:"",
+    province: "选择-省",
+    city: "-市",
+    district: "-县",
+    latitude: "",
+    longitude: "",
     customItem: "",
 
   },
   //打开地图选择位置
-  getLocation:function(){
+  getLocation: function () {
     var self = this;
     wx.chooseLocation({
-      success:function(res){
+      success: function (res) {
         self.setData({
-          address:res.address
+          address: res.address
         })
-        console.log("选点位置====",res.name);
-        console.log("详细地址====",res.address);
-        console.log("lat====",res.latitude);
-        console.log("lng====",res.latitude);
+        var str = res.address;
+        var reg = /.+?(省|市|自治区|自治州|县|区)/g; // 省市区的正则
+        console.log(str.match(reg));
+        console.log(str.match(reg)[0]);
+        console.log(str.match(reg)[1]);
+        if (str.match(reg).length > 2)
+          console.log(str.match(reg)[2]);
+        console.log("选点位置====", res.name);
+        console.log("详细地址====", res.address);
+        console.log("lat====", res.latitude);
+        console.log("lng====", res.longitude);
+
       }
     })
   },
   onLoad: function (options) {
+    wx.request({
+      url: util.apiUrl + 'GetSiteApi.ashx',
+      success: function (res) {
+        wx.setStorageSync('lat', res.data.result[0].lat);
+        wx.setStorageSync('lng', res.data.result[0].lng);
+        wx.setStorageSync('scope', res.data.result[0].scope);
+      }
+    })
+
     var aid = options.aid;
     var self = this;
     wx.setStorageSync('aid', aid);
@@ -39,26 +56,27 @@ Page({
         success: function (e) {
           self.setData({
             name: e.data.result[0].name,
-            phone:e.data.result[0].phone,
-            region:e.data.result[0].region,
-            province:e.data.result[0].province,
-            city:e.data.result[0].city,
-            district:e.data.result[0].district,
-            street:e.data.result[0].street
+            phone: e.data.result[0].phone,
+            region: e.data.result[0].region,
+            province: e.data.result[0].province,
+            city: e.data.result[0].city,
+            district: e.data.result[0].district,
+            street: e.data.result[0].street
 
           })
         }
       })
     }
+
   },
   bindRegionChange: function (e) {
     console.log("picker发送选择改变，携带值为", e.detail.value), this.setData({
       region: e.detail.value,
-      province:e.detail.value[0],
-      city:e.detail.value[1],
-      district:e.detail.value[2],
+      province: e.detail.value[0],
+      city: e.detail.value[1],
+      district: e.detail.value[2],
     });
-    console.log("县区:",e.detail.value[2])
+    console.log("县区:", e.detail.value[2])
   },
   submit: function (t) {
     var a = this;
@@ -99,6 +117,10 @@ Page({
       })
       return false;
     }
+    wx.request({
+      url: 'https://apis.map.qq.com/ws/direction/v1/driving/?from=39.915285,116.403857&to=39.915285,116.803857&waypoints=39.111,116.112;39.112,116.113&output=json&callback=cb&key=BAVBZ-LJD6F-YPWJL-NJKZZ-WXWAQ-B2BHO',
+    })
+
 
     wx.request({
       url: util.apiUrl + "GetAddressApi.ashx?type=1&aid=" + aid + "&id=" + uid + "&name=" + t.detail.value.name + "&phone=" + t.detail.value.phone + "&province=" + a.data.region[0] + "&city=" + a.data.region[1] + "&district=" + a.data.region[2] + "&street=" + t.detail.value.address,
