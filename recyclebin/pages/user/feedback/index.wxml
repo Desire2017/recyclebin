@@ -2,8 +2,8 @@
   <form bindsubmit="submit">
     <view class='flex_item_radio'>
       <view class='radio_name'>选择反馈</view>
-      <radio-group class="radio-group" bindchange="radioChange">
-        <radio class="radio" wx:for-items="{{class}}" wx:key="name" value="{{item.name}}" checked="{{item.checked}}">
+      <radio-group class="radio-group" bindchange="radioChange" name="className">
+        <radio class="radio" wx:for-items="{{class}}" wx:key="name" value="{{item.id}}" checked="{{item.checked}}">
           <text>{{item.name}}</text>
         </radio>
       </radio-group>

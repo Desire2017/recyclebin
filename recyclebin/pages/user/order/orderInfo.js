@@ -49,7 +49,7 @@ Page({
             self.setData({
               name: a.data.result[0].name,
               phone: a.data.result[0].phone,
-              address: a.data.result[0].region + " " + a.data.result[0].street
+              address: a.data.result[0].address + " " + a.data.result[0].detail
             });
           }
         })

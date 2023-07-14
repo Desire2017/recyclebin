@@ -8,7 +8,7 @@
         电话：{{item.phone}}
       </view>
       <view class="ren">
-        我的地址：{{item.region}} {{item.street}}
+        我的地址：{{item.address}} {{item.detail}}
       </view>
       <view bindtap="setDefault" class="choose" id="{{item.id}}">
         <text class="moren" wx:if="{{item.default==1}}">默认</text>

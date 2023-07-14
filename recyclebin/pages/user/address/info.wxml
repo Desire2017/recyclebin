@@ -23,33 +23,20 @@
           </view>
         </view>
       </view>
-
-      <view class='flex_item_info'>
-        <view class='placeholder'>
-          <view class="weui-cell__bd">
-            <image src="/images/icon_address.png"></image>
-              <view class="weui-input address" name="region">
-                {{province}} {{city}} {{district}}
-              </view>
-          </view>
-        </view>
-      </view>
-      <view class="weui-btn-area">
-        <button class="weui-btn" bindtap="getLocation"  type="primary">获取地址</button>
+      <view class="weui-btn-mini">
+        <button class="weui-btn mini" bindtap="getLocation"  type="primary">点击获取地理位置</button>
       </view>
       <view class='flex_item_info'>
         <view class='placeholder'>
           <view class="weui-cell__bd">
-            <!-- <image src="/images/icon_street.png"></image> -->
-            <textarea type="text" name="address" style="height: 150rpx;padding: 10rpx;" value="{{street}}" placeholder="详细地址"></textarea>
+            <textarea type="text" name="address" style="height: 100rpx;padding: 10rpx;" value="{{address}}" placeholder="地理位置" disabled="true"></textarea>
           </view>
         </view>
       </view>
       <view class='flex_item_info'>
         <view class='placeholder'>
           <view class="weui-cell__bd">
-            <image src="/images/icon_address.png"></image>
-            <input type="text" bindtap="getLocation" class="weui-input" name="addressInfo" value="{{address}}" placeholder="位置名称，详细地址"></input>
+            <textarea type="text" name="detail" style="height: 100rpx;padding: 10rpx;" value="{{detail}}" placeholder="单元号门牌号"></textarea>
           </view>
         </view>
       </view>

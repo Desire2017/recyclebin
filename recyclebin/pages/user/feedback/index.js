@@ -54,6 +54,13 @@ Page({
   },
   submit: function (t) {
     var a = t.detail.value.feedback;
+    if (t.detail.value.className == 0) {
+      wx.showToast({
+        title: "请选反馈类别",
+        icon: "none"
+      })
+      return false;
+    }
     if(t.detail.value.feedback.length==0){
       wx.showToast({
         title: "内容不能为空",
@@ -62,8 +69,9 @@ Page({
       })
       return false;
     }
+
     wx.request({
-      url: util.apiUrl + "GetFeedbackApi.ashx?type=0&id=" + wx.getStorageSync("uid") + "&feedback=" + a,
+      url: util.apiUrl + "GetFeedbackApi.ashx?type=0&id=" + wx.getStorageSync("uid") + "&feedback=" + a+"&cid="+t.detail.value.className,
       success: function (e) {
         "1" == e.data && wx.navigateBack({
           delta: 1,

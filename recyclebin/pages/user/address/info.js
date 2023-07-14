@@ -1,13 +1,12 @@
 var util = require('../../../utils/util.js');
+const { setFlavor } = require('../../../wxParse/showdown.js');
 //获取应用实例
 var app = getApp();
 Page({
   data: {
     name: "",
     phone: "",
-    province: "选择-省",
-    city: "-市",
-    district: "-县",
+    address: "",
     latitude: "",
     longitude: "",
     customItem: "",
@@ -16,25 +15,67 @@ Page({
   //打开地图选择位置
   getLocation: function () {
     var self = this;
+    var fromLat = wx.getStorageSync('lat');
+    var fromLng = wx.getStorageSync('lng');
+    var scope = parseInt(wx.getStorageSync('scope'));
+    var toLat = 0;
+    var toLng = 0;
     wx.chooseLocation({
       success: function (res) {
         self.setData({
-          address: res.address
+          address: res.address+" "+res.name
         })
+        toLat = res.latitude;
+        toLng = res.longitude;
         var str = res.address;
         var reg = /.+?(省|市|自治区|自治州|县|区)/g; // 省市区的正则
         console.log(str.match(reg));
         console.log(str.match(reg)[0]);
         console.log(str.match(reg)[1]);
-        if (str.match(reg).length > 2)
-          console.log(str.match(reg)[2]);
+        if (str.match(reg).length > 2) {
+          self.setData({
+            province: str.match(reg)[0],
+            city: str.match(reg)[1],
+            district: str.match(reg)[2]
+          })
+        }
+        if (str.match(reg).length == 2) {
+          self.setData({
+            province: str.match(reg)[0],
+            city: str.match(reg)[0],
+            district: str.match(reg)[1]
+          })
+        }
+        console.log(str.match(reg)[2]);
         console.log("选点位置====", res.name);
         console.log("详细地址====", res.address);
         console.log("lat====", res.latitude);
         console.log("lng====", res.longitude);
-
+        https://apis.map.qq.com/ws/distance/v1/matrix/?mode=driving&from=39.984092,116.306934;40.007763,116.353798&to=39.981987,116.362896;39.949227,116.394310&key=OB4BZ-D4W3U-B7VVO-4PJWW-6TKDJ-WPB77
+        wx.request({
+          url: 'https://apis.map.qq.com/ws/distance/v1/matrix/?mode=driving&from='+fromLat+','+fromLng+'&to='+toLat+','+toLng+'&key=BAVBZ-LJD6F-YPWJL-NJKZZ-WXWAQ-B2BHO',
+          success: function (e) {
+            console.log(e.data);
+            console.log("distance====", e.data.result.rows[0].elements[0].distance);
+            var distance = parseInt(e.data.result.rows[0].elements[0].distance);
+            if(distance>scope){
+              wx.showModal({
+                title: '温馨提示',
+                content: '回收范围超过距离，默认'+scope+'米，您的距离：'+distance+'米',
+                showCancel:false,
+                success (res) {
+                  self.setData({
+                    address:''
+                  })
+                }
+              })
+              
+            }
+          }
+        })
       }
     })
+    
   },
   onLoad: function (options) {
     wx.request({
@@ -56,29 +97,16 @@ Page({
           self.setData({
             name: e.data.result[0].name,
             phone: e.data.result[0].phone,
-            region: e.data.result[0].region,
-            province: e.data.result[0].province,
-            city: e.data.result[0].city,
-            district: e.data.result[0].district,
-            street: e.data.result[0].street
-
+            address: e.data.result[0].address,
+            detail:e.data.result[0].detail,
           })
         }
       })
     }
 
   },
-  bindRegionChange: function (e) {
-    console.log("picker发送选择改变，携带值为", e.detail.value), this.setData({
-      region: e.detail.value,
-      province: e.detail.value[0],
-      city: e.detail.value[1],
-      district: e.detail.value[2],
-    });
-    console.log("县区:", e.detail.value[2])
-  },
   submit: function (t) {
-    var a = this;
+    var self = this;
     var uid = wx.getStorageSync('uid');
     var aid = wx.getStorageSync('aid');
     if (t.detail.value.name.length == 0) {
@@ -102,27 +130,22 @@ Page({
       })
       return false;
     }
-    if (a.data.region[0] == "选择-省-市-县/地区") {
-      wx.showToast({
-        title: "请选择-省-市-县/地区",
-        icon: "none"
-      })
-      return false;
-    }
     if (t.detail.value.address.length == 0) {
       wx.showToast({
-        title: "请填写详细地址",
+        title: "点击获取地理位置",
+        icon: "none"
+      })
+      return false;
+    }
+    if (t.detail.value.detail.length == 0) {
+      wx.showToast({
+        title: "填写单元号门牌号",
         icon: "none"
       })
       return false;
     }
     wx.request({
-      url: 'https://apis.map.qq.com/ws/direction/v1/driving/?from=39.915285,116.403857&to=39.915285,116.803857&waypoints=39.111,116.112;39.112,116.113&output=json&callback=cb&key=BAVBZ-LJD6F-YPWJL-NJKZZ-WXWAQ-B2BHO',
-    })
-
-
-    wx.request({
-      url: util.apiUrl + "GetAddressApi.ashx?type=1&aid=" + aid + "&id=" + uid + "&name=" + t.detail.value.name + "&phone=" + t.detail.value.phone + "&province=" + a.data.region[0] + "&city=" + a.data.region[1] + "&district=" + a.data.region[2] + "&street=" + t.detail.value.address,
+      url: util.apiUrl + "GetAddressApi.ashx?type=1&aid=" + aid + "&id=" + uid + "&name=" + t.detail.value.name + "&phone=" + t.detail.value.phone + "&address=" + t.detail.value.address + "&detail=" + t.detail.value.detail ,
       success: function (e) {
         "1" == e.data && wx.navigateBack({
           delta: 2,

@@ -187,7 +187,7 @@ Page({
           showView: !0,
           name: e.data.result[0].name,
           phone: e.data.result[0].phone,
-          address: e.data.result[0].region + " " + e.data.result[0].street
+          address: e.data.result[0].address + " " + e.data.result[0].detail
         }), wx.setStorageSync("aid", e.data.result[0].id), console.log("aid:" + e.data.result[0].id),
           wx.setStorageSync("type", 1)) : (self.setData({
             showView: !1
@@ -242,7 +242,7 @@ Page({
           showView: !0,
           name: s.data.result[0].name,
           phone: s.data.result[0].phone,
-          address: s.data.result[0].region + " " + s.data.result[0].street
+          address: s.data.result[0].address + " " + s.data.result[0].detail
         }), wx.setStorageSync("aid", s.data.result[0].id), console.log("aid:" + s.data.result[0].id),
           wx.setStorageSync("type", 1)) : (self.setData({
             showView: !1

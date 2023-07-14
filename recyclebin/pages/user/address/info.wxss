@@ -113,7 +113,7 @@
 }
 
 .flex_item_info {
-  margin: 0 20rpx 20rpx 20rpx;
+  margin:20rpx;
   text-align: left;
   font-size: 26rpx;
   background-color: #f7f7f7;
@@ -148,6 +148,18 @@
   margin-left: 50rpx;
 }
 
+textarea {
+  display: block;
+  width: auto;
+}
+
+.weui-btn-mini button {
+  border-radius: 20rpx;
+  font-size: 26rpx;
+  width: 240rpx;
+  color: #fff;
+  padding: 10rpx;
+}
 
 .weui-btn-area button {
   border-radius: 20rpx;

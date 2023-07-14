@@ -43,8 +43,7 @@
   display: block;
   clear: both;
   overflow: hidden;
-  height: 60rpx;
-  line-height: 60rpx;
+  margin: 10rpx;
 }
 
 .choose{
