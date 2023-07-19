@@ -37,7 +37,7 @@
             <view class="weui-panel__ft">
               <view class="weui-cell weui-cell_access weui-cell_link">
                 <view class="weui-cell__bd textr">
-                  <view bindtap="checkMaster" class="dd_gr" data-id="{{item.id}}" style="{{item.intState==1?'':'display:none'}}">师傅信息</view>
+                  <view bindtap="checkMaster" class="dd_gr" data-id="{{item.master}}" style="{{item.state==1?'':'display:none'}}">师傅信息</view>
                   
                   <navigator class="dd_pj" style="{{item.state==2?'':'display:none'}}" url="/pages/user/order/comment?id={{item.id}}">评价</navigator>
                   <view bindtap="cancelConfirm" class="dd_sc" data-id="{{item.id}}" style="{{item.state==0?'':'display:none'}}">取消订单</view>

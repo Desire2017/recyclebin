@@ -138,7 +138,7 @@ Page({
   checkMaster: function (t) {
     var n = t.currentTarget.dataset.id;
     wx.request({
-      url: util.apiUrl + "GetRecycleOrderApi.ashx?type=6&id=" + n,
+      url: util.apiUrl + "GetRecycleOrderApi.ashx?type=7&id=" + n,
       success: function (e) {
         wx.showModal({
           title: e.data.result[0].name,
