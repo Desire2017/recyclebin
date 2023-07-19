@@ -215,8 +215,19 @@ Page({
       return false;
     }
 
-    var url = util.apiUrl + "GetRecycleOrderApi.ashx?type=6&uid=" + uid + "&cid=4" + "&aid=" + aid + "&date=" + date + "&set=" + "暂无规格";
-
+    
+    var images = this.data.picList;
+    if (images.length == 0) {
+      var url = util.apiUrl + "GetRecycleOrderApi.ashx?type=6&uid=" + uid + "&cid=4" + "&aid=" + aid + "&date=" + date + "&set=" + "暂无规格";
+    }
+    if (images.length == 1) {
+      var url = util.apiUrl + "GetRecycleOrderApi.ashx?type=6&uid=" + uid + "&cid=4" + "&aid=" + aid + "&date=" + date + "&set=" + "暂无规格" + '&image1=' + images[0].imgUrl;
+        console.log("image1=" + images[0].imgUrl);
+    }
+    if (images.length == 2) {
+      var url = util.apiUrl + "GetRecycleOrderApi.ashx?type=6&uid=" + uid + "&cid=4" + "&aid=" + aid + "&date=" + date + "&set=" + "暂无规格" + '&image1=' + images[0].imgUrl + '&image2=' + images[1].imgUrl;
+        console.log("image1=" + images[0].imgUrl + '&image2=' + images[1].imgUrl);
+    }
     wx.request({
       url: url,
       success: function (res) {

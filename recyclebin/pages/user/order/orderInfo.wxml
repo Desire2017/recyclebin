@@ -33,6 +33,18 @@
               </view>
             </view>
           </view>
+          <view class="weui-panel__bd" style="{{orderImg.length==0?'display:none':''}}">
+            <view class="weui-media-box weui-media-box_appmsg">
+              <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+                <view class="weui-media-box__title">回收照片： </view>
+                <view class="weui-cell hbg" >
+                  <view class="weui-cell__hd dd_re" wx:for="{{orderImg}}" wx:key="*this">
+                    <image class="dd_img" src="{{item.img}}"></image>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
         </view>
       </view>
     </view>

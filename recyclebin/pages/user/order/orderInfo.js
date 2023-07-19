@@ -55,6 +55,14 @@ Page({
         })
       }
     })
+    wx.request({
+      url: util.apiUrl + "GetRecycleOrderApi.ashx?type=8&id=" + id,
+      success: function (res) {
+        self.setData({
+          orderImg: res.data.result
+        })
+      }
+    })
   },
 
   /**

@@ -110,3 +110,11 @@
 .weui-cell:before {
   border-top: none;
 }
+
+.dd_img {
+  border-radius: 30rpx;
+  width: 200rpx;
+  height: 200rpx;
+  display: block;
+  margin-left: 10rpx;
+}
