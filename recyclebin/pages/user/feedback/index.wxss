@@ -1,4 +1,5 @@
 @import "../../../style/weui.wxss";
+
 .page {
   display: block;
   position: relative;
@@ -25,9 +26,10 @@
   width: 46%;
   height: 80rpx;
   line-height: 80rpx;
- 
+
 }
-.radio:nth-child(2n){
+
+.radio:nth-child(2n) {
   margin-left: 40rpx;
 }
 
@@ -51,6 +53,7 @@ textarea {
   padding: 10rpx 0;
   border: 2rpx solid #eee;
   border-radius: 20rpx;
+  margin-bottom: 10rpx;
 }
 
 .textarea-wrp {
@@ -62,9 +65,9 @@ textarea {
   font-size: 32rpx;
 }
 
-.weui-btn-area button{
+.weui-btn-area button {
   font-size: 32rpx;
-    width: 240rpx;
+  width: 240rpx;
 }
 
 weui-cell__ft_in-access:after {

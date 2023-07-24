@@ -73,7 +73,7 @@ Page({
     }
 
   },
-  //
+  //动态
   goTrend: function (e) {
     wx.switchTab({
       url: '/pages/trend/index',
