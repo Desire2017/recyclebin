@@ -175,10 +175,23 @@
 
 /* 资讯内容 */
 .weui-article {
-  margin: 15rpx 20rpx;
   background: #fff;
-  overflow: hidden;
   border-radius: 30rpx;
+  display: block;
+  clear: both;
+}
+
+.weui-article__section {
+  display: block;
+  clear: both;
+}
+
+.weui-article image {
+  display: block;
+  width: 100%;
+  margin: 0px auto;
+  align-items: center;
+  justify-content: center;
 }
 
 .weui-article__h1 {
@@ -213,17 +226,16 @@
   margin: 20rpx;
   font-size: 30rpx;
   padding-bottom: 20rpx;
-  display: flex;
 }
 
-.wxParse-p{
+.wxParse-p {
   display: contents;
 }
 
-image.weui-article__img {
+/* image.weui-article__img {
   width: 100%;
   display: block;
-}
+} */
 
 .flex_item {
   display: inline-block;

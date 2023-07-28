@@ -9,6 +9,8 @@
     "pages/furniture/index",
     "pages/trend/index",
     "pages/trend/details",
+    "pages/order/index",
+    "pages/order/orderInfo",
     "pages/user/index",
     "pages/user/order/orderList",
     "pages/user/order/orderInfo",
@@ -50,6 +52,12 @@
         "iconPath": "tab-bar/trend.png",
         "selectedIconPath": "tab-bar/trend-active.png",
         "text": "动态"
+      },
+      {
+        "pagePath": "pages/order/index",
+        "iconPath": "tab-bar/order.png",
+        "selectedIconPath": "tab-bar/order-active.png",
+        "text": "订单"
       },
       {
         "pagePath": "pages/user/index",

@@ -57,6 +57,7 @@ page {
   text-align: center;
   font-size: 30rpx;
 }
+
 .bac view:first-child {
   border-right: 1px solid#fff;
 }
@@ -72,6 +73,18 @@ page {
   font-size: 28rpx;
   border-radius: 30rpx;
   margin-right: 30rpx;
+}
+
+.myInfo {
+  font-size: 28rpx;
+}
+
+.myInfo image {
+
+  height: 64rpx;
+  width: 64rpx;
+  display: block;
+  margin: 0 auto 10rpx;
 }
 
 .myServer {
@@ -168,6 +181,11 @@ page {
   display: block;
 }
 
+.placeholder button{
+  display: block;
+  background-color: #fff;
+}
+
 .flex_item image {
   height: 48rpx;
   width: 48rpx;
@@ -240,7 +258,7 @@ page {
   border-radius: 50%;
   display: block;
   z-index: 1;
-  background-color: rgba(241, 238, 238, 0.877); 
+  background-color: rgba(241, 238, 238, 0.877);
 }
 
 .service image {

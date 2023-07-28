@@ -47,6 +47,15 @@ Page({
    */
   onLoad(options) {
     var self = this;
+    //页面标题
+    wx.request({
+      url: util.apiUrl + "GetPageTitleApi.ashx?type=2",
+      success(res){
+        wx.setNavigationBarTitle({
+          title: res.data.result[0].title,
+        })
+      }
+    })
     wx.request({
       url: util.apiUrl + "GetInfoApi.ashx?type=2",
       success: function (t) {

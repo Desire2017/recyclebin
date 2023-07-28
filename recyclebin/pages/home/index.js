@@ -116,6 +116,15 @@ Page({
         wx.setStorageSync('appletName', res.data.result[0].name)
       }
     })
+    //页面标题
+    wx.request({
+      url: util.apiUrl + "GetPageTitleApi.ashx?type=1",
+      success(res){
+        wx.setNavigationBarTitle({
+          title: res.data.result[0].title,
+        })
+      }
+    })
     //分享，标题，图片
     wx.request({
       url: util.apiUrl + "GetShareApi.ashx",
@@ -147,16 +156,6 @@ Page({
       success(res) {
         self.setData({
           banners1: res.data.result
-        })
-      }
-    })
-
-    //顶部菜单
-    wx.request({
-      url: util.apiUrl + "GetClothesClassApi.ashx?type=1",
-      success(res) {
-        self.setData({
-          category1: res.data.result
         })
       }
     })

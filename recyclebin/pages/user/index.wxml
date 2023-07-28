@@ -15,6 +15,11 @@
           <button size="mini" class="txan" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">点击登录 </button>
         </view>
       </block>
+      <view class="myInfo">
+        <navigator url="/pages/user/info/index" hover-class="navigator-hover">
+          <image src="/images/myInfo.png" />
+        </navigator>
+      </view>
     </view>
   </view>
   <!-- 全部订单 -->
@@ -22,37 +27,37 @@
     <view class="server order">
       <view class="weui-cell weui-cell_access">
         <view class="weui-cell__bd weui-cell_primary">
-          <view class="server_order">我的回收</view>
+          <view class="server_order">回收订单</view>
         </view>
       </view>
     </view>
     <view class="flex-nav">
       <view class='flex_item'>
         <view class='placeholder'>
-          <navigator url="/pages/user/order/orderList?state=0" hover-class="navigator-hover">
-            <image src="/images/icon_order4.png" class="logoimg" />待回收
-          </navigator>
-        </view>
-      </view>
-      <view class='flex_item'>
-        <view class='placeholder'>
           <navigator url="/pages/user/order/orderList?state=1" hover-class="navigator-hover">
-            <image src="/images/icon_order2.png" class="logoimg" />服务中
-          </navigator>
-        </view>
-      </view>
-      <view class='flex_item'>
-        <view class='placeholder'>
-          <navigator url="/pages/user/order/orderList?state=2" hover-class="navigator-hover">
-            <image src="/images/icon_order3.png" class="logoimg" />待评价
+            <image src="/images/icon_stateIng.png" class="logoimg" />进行中
           </navigator>
         </view>
       </view>
       <view class='flex_item'>
         <view class='placeholder'>
           <navigator url="/pages/user/order/orderList?state=99" hover-class="navigator-hover">
-            <image src="/images/icon_order0.png" class="logoimg" />全部订单
+            <image src="/images/icon_stated.png" class="logoimg" />已完成
           </navigator>
+        </view>
+      </view>
+      <view class='flex_item'>
+        <view class='placeholder'>
+          <navigator url="/pages/user/order/orderList?state=99" hover-class="navigator-hover">
+            <image src="/images/icon_stateAll.png" class="logoimg" />全部订单
+          </navigator>
+        </view>
+      </view>
+      <view class='flex_item'>
+        <view class='placeholder'>
+          <button size="mini" openType="contact">
+            <image src="/images/icon_kefu.png"></image>
+          </button>售后/客服
         </view>
       </view>
     </view>

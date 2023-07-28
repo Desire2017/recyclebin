@@ -46,6 +46,15 @@ Page({
   onLoad(options) {
     var self = this;
     var uid = wx.getStorageSync('uid');
+    //页面标题
+    wx.request({
+      url: util.apiUrl + "GetPageTitleApi.ashx?type=3",
+      success(res){
+        wx.setNavigationBarTitle({
+          title: res.data.result[0].title,
+        })
+      }
+    })
     wx.request({
       url: util.apiUrl + 'GetSystemConfigApi.ashx',
       success(res) {

@@ -113,7 +113,7 @@
             <image src="/images/icon_feedback_c.png" class="logoimg" mode='widthFix' />
           </button>
           <view class="trend-title1">预约须知</view>
-          <view class="trend-title2">旧衣回收说明</view>
+          <view class="trend-title2">可回收物回收说明</view>
         </view>
       </view>
     </view>

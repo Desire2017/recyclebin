@@ -43,15 +43,15 @@
 .flex-nav {
   display: block;
   overflow: hidden;
-  margin: 20rpx;
+  margin: 0 20rpx;
   border-radius: 30rpx;
-  background-color: #fff;
+  background-color:rgba(241, 238, 238, 0.877);
 }
 
 .top {
-  margin-top: -90rpx;
+  margin-top: -60rpx;
   position: relative;
-  padding: 30rpx 0;
+  padding: 10rpx 0;
 }
 
 .title {
@@ -89,12 +89,16 @@
 }
 
 .flex_item1 {
-  display: inline-block;
-  width: 16.6%;
-  text-align: center;
-  font-size: 18rpx;
+  display: inline-grid;
+  width: 25%;
+  font-size: 24rpx;
   color: #353535;
-  background-color: #fff;
+}
+
+.flex_item1 text{
+  height: 48rpx;
+  line-height: 48rpx;
+  font-size: 28rpx;
 }
 
 
@@ -125,9 +129,11 @@
 }
 
 .placeholder1 {
-  display: block;
+  display: flex;
   color: #333;
   font-size: 20rpx;
+  height: 48rpx;
+  line-height: 48rpx;
 }
 
 
@@ -140,10 +146,8 @@
 }
 
 .flex_item1 image {
-  height: 60rpx;
-  width: 60rpx;
-  display: block;
-  margin: 0 auto;
+  height: 48rpx;
+  width: 48rpx;
 }
 
 .flex_item2 image {

@@ -87,7 +87,7 @@
   padding: 5px;
   display: block;
   color: #333;
-  font-size: 20rpx;
+  font-size: 24rpx;
 }
 
 
@@ -132,9 +132,8 @@
 
 .flex_item {
   display: inline-block;
-  width: 20%;
+  width: 16.6%;
   text-align: center;
-  font-size: 30rpx;
   color: #353535;
   background-color: #fff;
 }
